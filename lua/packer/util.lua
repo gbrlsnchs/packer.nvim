@@ -101,6 +101,10 @@ end
 
 -- Credit to @crs for the original function
 util.float = function(opts)
+  if type(opts) ~= 'table' then
+	opts = {}
+  end
+
   local last_win = vim.api.nvim_get_current_win()
   local last_pos = vim.api.nvim_win_get_cursor(last_win)
   local columns = vim.o.columns
